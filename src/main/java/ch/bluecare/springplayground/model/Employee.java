@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
 
-// JPA annotation to make this object ready for storage ina JPA-based data store
+// JPA (Java Persistence API) annotation to make this object ready for storage ina JPA-based data store
 @Entity
 public class Employee {
 

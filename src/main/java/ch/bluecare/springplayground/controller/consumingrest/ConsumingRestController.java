@@ -8,6 +8,14 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Tutorial 3: https://spring.io/guides/gs/consuming-rest/
+ *
+ * <p>Basics on how to consume a RESTful Web Service
+ *
+ * <p>Requires the Jackson JSON library which is automatically included inn the
+ * spring-boot-starter-web dependency
+ */
 // @SpringBootApplication
 public class ConsumingRestController {
 

@@ -5,7 +5,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-// Basics on how to build a RESTful Web Service (https://spring.io/guides/gs/rest-service/)
+/**
+ * Tutorial 2: https://spring.io/quickstart
+ *
+ * <p>Basics on how to build a RESTful Web Service
+ *
+ * <p>Requires the Jackson JSON library which is automatically included inn the
+ * spring-boot-starter-web dependency
+ */
 @RestController
 public class GreetingController {
 

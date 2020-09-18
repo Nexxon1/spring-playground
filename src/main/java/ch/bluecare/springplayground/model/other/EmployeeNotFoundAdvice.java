@@ -1,4 +1,4 @@
-package ch.bluecare.springplayground.model.idk;
+package ch.bluecare.springplayground.model.other;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

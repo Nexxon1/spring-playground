@@ -3,7 +3,7 @@ package ch.bluecare.springplayground.controller;
 import ch.bluecare.springplayground.model.Employee;
 import ch.bluecare.springplayground.model.EmployeeRepository;
 import ch.bluecare.springplayground.model.consumingrest.EmployeeModelAssembler;
-import ch.bluecare.springplayground.model.idk.EmployeeNotFoundException;
+import ch.bluecare.springplayground.model.other.EmployeeNotFoundException;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -16,6 +16,13 @@ import java.util.stream.Collectors;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+/**
+ * Tutorial 4: https://spring.io/guides/tutorials/rest/
+ *
+ * <p>Building REST services with Spring. Covering GET, POST, PUT, DELETE
+ *
+ * <p>uses Spring MVC + Spring HATEOAS with HAL representations
+ */
 @RestController
 public class EmployeeController {
   private final EmployeeRepository repository;
@@ -39,6 +46,7 @@ public class EmployeeController {
         employees, linkTo(methodOn(EmployeeController.class).all()).withSelfRel());
   }
 
+  // Example: curl -X POST localhost:8080/employees -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "gardener"}'
   @PostMapping("/employees")
   ResponseEntity<EntityModel<Employee>> newEmployee(@RequestBody Employee newEmployee) {
     // return repository.save(newEmployee);
@@ -68,6 +76,8 @@ public class EmployeeController {
     return assembler.toModel(employee);
   }
 
+  // Example (Requirement: Execute curl POST command above):
+  // curl -X PUT localhost:8080/employees/3 -H 'Content-type:application/json' -d '{"name": "Samwise Gamgee", "role": "ring bearer"}'
   @PutMapping("/employees/{id}")
   Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
 
@@ -95,6 +105,7 @@ public class EmployeeController {
        */
   }
 
+  // Example: curl -X DELETE localhost:8080/employees/2
   @DeleteMapping("/employees/{id}")
   ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
     repository.deleteById(id);

@@ -1,4 +1,4 @@
-package ch.bluecare.springplayground.model.idk;
+package ch.bluecare.springplayground.model.other;
 
 public class EmployeeNotFoundException extends RuntimeException {
   public EmployeeNotFoundException(Long id) {
