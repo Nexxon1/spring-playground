@@ -8,6 +8,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * This class gets loaded automatically when starting the Spring Application
+ */
 @Configuration
 public class LoadDatabase {
 

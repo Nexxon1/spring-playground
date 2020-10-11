@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  * <p>Basics on how to build a RESTful Web Service
  *
- * <p>Requires the Jackson JSON library which is automatically included inn the
+ * <p>Requires the Jackson JSON library which is automatically included in the
  * spring-boot-starter-web dependency
  */
 @RestController
